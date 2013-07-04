@@ -13,8 +13,8 @@
 # include apt_repos
 
 class apt_repos (
-    $ensure     => params_lookup('ensure'),
-    $repos      => params_lookup('apt_repos', 'global')
+    $ensure     = params_lookup('ensure'),
+    $repos      = params_lookup('apt_repos', 'global')
     ) inherits apt_repos::params {
 
     if $ensure == 'present' {
