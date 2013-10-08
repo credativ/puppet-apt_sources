@@ -17,7 +17,7 @@ class apt_sources (
     $repos      = params_lookup('apt_sources', 'global')
     ) inherits apt_sources::params {
 
-    if $ensure == 'present' {
+    if $ensure == 'present' and $repos {
         create_resources(apt::source, $repos)
     }
 }
