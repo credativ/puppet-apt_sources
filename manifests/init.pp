@@ -1,4 +1,4 @@
-# = Class: apt_repos
+# = Class: apt_sources
 #
 # Simple class to configure a bunch of custom repos
 # (e.g. from hiera)
@@ -10,14 +10,14 @@
 #
 # == Example usage:
 #
-# include apt_repos
+# include apt_sources
 
-class apt_repos (
+class apt_sources (
     $ensure     = params_lookup('ensure'),
-    $repos      = params_lookup('apt_repos', 'global')
-    ) inherits apt_repos::params {
+    $repos      = params_lookup('apt_sources', 'global')
+    ) inherits apt_sources::params {
 
     if $ensure == 'present' {
-        create_resources(apt_repos::repo, $repos)
+        create_resources(apt_sources::repo, $repos)
     }
 }
