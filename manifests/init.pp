@@ -18,7 +18,6 @@ class apt_sources (
     ) inherits apt_sources::params {
 
     if $ensure == 'present' {
-        fail($repos)
         create_resources(apt::source, $repos)
     }
 }
