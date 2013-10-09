@@ -12,7 +12,7 @@ class apt_sources::source(
 
     if $keycontent {
         file { '/etc/apt/key.d':
-            ensure  => Directory
+            ensure  => directory,
             owner   => 'root'
         }
 
@@ -30,14 +30,13 @@ class apt_sources::source(
 }
 
     apt::source { $title:
-        $location,
-        $release,
-        $repos,
-        $required_packages,
-        $key
-        $key_server,
-        $pin,
-        $include_src,
-        $keycontent
+        location            => $location,
+        release             => $release,
+        repos               => $repos,
+        required_packages   => $required_packages,
+        key                 => $key,
+        key_server          => $key_server,
+        pin                 => $pin,
+        include_src         => $include_src,
     }
 }
