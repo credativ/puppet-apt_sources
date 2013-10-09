@@ -11,11 +11,15 @@ define apt_sources::source(
     $key_source = undef
 ) {
 
+    include apt::update
+
     if $key_source {
-	apt::key { $title:
-		ensure	   => $ensure,
-		key_source => $key_source
-	}
+        apt::key { $title:
+            ensure      => $ensure,
+            key_source  => $key_source,
+            unless      => "apt-key list |grep -q '\d{4}{R,D}/$key'" ,
+            notify      => Exec['apt_update']
+        }
     }
 
     apt::source { $title:
@@ -28,5 +32,6 @@ define apt_sources::source(
         key_server          => $key_server,
         pin                 => $pin,
         include_src         => $include_src,
+        notify              => Exec['apt_update']
     }
 }
