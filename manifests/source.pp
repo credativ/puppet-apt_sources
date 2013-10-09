@@ -17,7 +17,6 @@ define apt_sources::source(
         apt::key { $title:
             ensure      => $ensure,
             key_source  => $key_source,
-            unless      => "apt-key list |grep -q '\d{4}{R,D}/$key'" ,
             notify      => Exec['apt_update']
         }
     }
