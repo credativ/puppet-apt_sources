@@ -1,35 +1,25 @@
-class apt_sources::source(
+define apt_sources::source(
+    $ensure,
     $location,
     $release,
     $repos,
-    $required_packages,
-    $key,
-    $key_server,
-    $pin,
-    $include_src,
-    $keycontent
+    $required_packages = undef,
+    $key = undef,
+    $key_server = undef,
+    $pin = undef,
+    $include_src = undef,
+    $key_source = undef
 ) {
 
-    if $keycontent {
-        file { '/etc/apt/key.d':
-            ensure  => directory,
-            owner   => 'root'
-        }
-
-        file { '/etc/apt/key.d/$title.key':
-            ensure  => present,
-            content => $keycontent,
-            notify  => Exec["apt_key_$title"],
-            require => File['/etc/apt/key.d']
-        }
-
-        exec { "apt_key_$title":
-            command     => "/usr/bin/apt-key add /etc/apt/key.d/$title.key",
-            refreshonly => yes
-        }
-}
+    if $key_source {
+	apt::key { $title:
+		ensure	   => $ensure,
+		key_source => $key_source
+	}
+    }
 
     apt::source { $title:
+	ensure		    => $ensure,
         location            => $location,
         release             => $release,
         repos               => $repos,
