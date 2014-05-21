@@ -1,0 +1,6 @@
+apt_sources:
+    'osf4':
+        location: 'http://packages.osf.credativ.lan/wheezy/release/osf4'
+        release: 'osf4'
+        repos: 'main'
+        ensure: 'present'
