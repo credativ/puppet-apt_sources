@@ -1,0 +1,4 @@
+manifests   etc/puppet/module/apt_sources
+README*     usr/share/doc/puppet-module-apt_sources
+examples/*  usr/share/doc/puppet-module-apt_sources/examples
+

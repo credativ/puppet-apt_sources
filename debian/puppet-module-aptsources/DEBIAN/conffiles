@@ -1,0 +1,3 @@
+/etc/puppet/module/apt_sources/manifests/init.pp
+/etc/puppet/module/apt_sources/manifests/params.pp
+/etc/puppet/module/apt_sources/manifests/source.pp

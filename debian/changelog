@@ -1,0 +1,5 @@
+puppet-module-aptsources (1.0-1) unstable; urgency=low
+
+  * Initial release.
+
+ -- Patrick Schoenfeld <patrick.schoenfeld@credativ.de>  Wed, 21 May 2014 09:32:25 +0200
