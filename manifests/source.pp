@@ -15,7 +15,7 @@ define apt_sources::source(
     if $key_content {
         apt::key { $title:
             ensure      => $ensure,
-            key_content => $key_content
+            key_content => $key_content,
             before      => Apt::Source[$title]
         }
     }
