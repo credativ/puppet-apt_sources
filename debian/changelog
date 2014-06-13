@@ -1,3 +1,9 @@
+puppet-module-aptsources (1.2) unstable; urgency=low
+
+  * Add key_content feature
+
+ -- Patrick Schoenfeld <patrick.schoenfeld@credativ.de>  Fri, 13 Jun 2014 10:20:48 +0200
+
 puppet-module-aptsources (1.1) unstable; urgency=low
 
   * Fix install path

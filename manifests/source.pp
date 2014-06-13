@@ -8,8 +8,17 @@ define apt_sources::source(
     $key_server = undef,
     $pin = undef,
     $include_src = undef,
-    $key_source = undef
+    $key_source = undef,
+    $key_content = undef
 ) {
+
+    if $key_content {
+        apt::key { $title:
+            ensure      => $ensure,
+            key_content => $key_content
+            before      => Apt::Source[$title]
+        }
+    }
 
     if $key_source {
         apt::key { $title:
@@ -20,7 +29,7 @@ define apt_sources::source(
     }
 
     apt::source { $title:
-	ensure		    => $ensure,
+        ensure              => $ensure,
         location            => $location,
         release             => $release,
         repos               => $repos,
