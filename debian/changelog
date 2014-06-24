@@ -1,3 +1,9 @@
+puppet-module-aptsources (1.5) unstable; urgency=medium
+
+  * pass along key variable instead of title to apt::key (required for puppetlabs/apt 1.5.0)
+
+ -- Arnd Hannemann <arnd.hannemann@credativ.de>  Tue, 24 Jun 2014 15:39:10 +0200
+
 puppet-module-aptsources (1.4) unstable; urgency=medium
 
   * Change module path
