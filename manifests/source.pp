@@ -9,7 +9,8 @@ define apt_sources::source(
     $pin = undef,
     $include_src = undef,
     $key_source = undef,
-    $key_content = undef
+    $key_content = undef,
+    $architecture = undef,
 ) {
 
     if $key_content {
@@ -38,5 +39,6 @@ define apt_sources::source(
         key_server          => $key_server,
         pin                 => $pin,
         include_src         => $include_src,
+        architecture        => $architecture,
     }
 }
