@@ -1,8 +1,9 @@
-puppet-module-aptsources (1.6) UNRELEASED; urgency=medium
+puppet-module-aptsources (1.6) unstable; urgency=medium
 
+  [ Bastian Blank ]
   * Support architecture parameter in source
 
- -- Bastian Blank <bastian.blank@credativ.de>  Thu, 18 Sep 2014 16:47:59 +0200
+ -- Patrick Schoenfeld <patrick.schoenfeld@credativ.de>  Wed, 29 Oct 2014 09:45:46 +0100
 
 puppet-module-aptsources (1.5) unstable; urgency=medium
 
