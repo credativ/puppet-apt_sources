@@ -22,7 +22,7 @@ define apt_sources::source(
     }
 
     if $key_source {
-        apt::key { $title:
+        apt::key { $key:
             ensure      => $ensure,
             key_source  => $key_source,
             before      => Apt::Source[$title]
