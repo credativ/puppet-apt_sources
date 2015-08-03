@@ -1,3 +1,10 @@
+puppet-module-aptsources (1.6.1) UNRELEASED; urgency=medium
+
+  * Prevent Apt::Key validation error
+  * Prevent duplicate Apt::Key resources
+
+ -- Maximilian Gaß <maximilian.gass@credativ.de>  Mon, 03 Aug 2015 17:43:51 +0200
+
 puppet-module-aptsources (1.6) unstable; urgency=medium
 
   [ Bastian Blank ]
