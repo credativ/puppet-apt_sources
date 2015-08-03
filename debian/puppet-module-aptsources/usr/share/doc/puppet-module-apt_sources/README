@@ -1,9 +1,0 @@
-apt_sources
-===========
-
-apt_sources is a puppet class, which allows to configure a bunch of repos
-from hiera. It is mostly useful for systems prior puppet 3, since with this
-version (which features automatical hiera lookups) its easier to define
-repos automatically.
-
-For a usage example, see the examples.

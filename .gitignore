@@ -1,0 +1,4 @@
+/debian/puppet-module-aptsources
+debian/*.debhelper.log
+debian/*.substvars
+debian/files

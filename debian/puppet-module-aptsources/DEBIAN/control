@@ -1,8 +1,0 @@
-Package: puppet-module-aptsources
-Version: 1.0-1
-Architecture: all
-Maintainer: Patrick Schoenfeld <patrick.schoenfeld@credativ.de>
-Installed-Size: 63
-Section: admin
-Priority: optional
-Description: puppet module apt_sources
