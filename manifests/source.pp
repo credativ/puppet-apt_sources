@@ -14,18 +14,22 @@ define apt_sources::source(
 ) {
 
     if $key_content {
-        apt::key { $key:
-            ensure      => $ensure,
-            key_content => $key_content,
-            before      => Apt::Source[$title]
+        if !defined(Apt::Key[$key]) {
+            apt::key { $key:
+                ensure      => $ensure,
+                key_content => $key_content,
+                before      => Apt::Source[$title]
+            }
         }
     }
 
     if $key_source {
-        apt::key { $key:
-            ensure      => $ensure,
-            key_source  => $key_source,
-            before      => Apt::Source[$title]
+        if !defined(Apt::Key[$key]) {
+            apt::key { $key:
+                ensure      => $ensure,
+                key_source  => $key_source,
+                before      => Apt::Source[$title]
+            }
         }
     }
 
